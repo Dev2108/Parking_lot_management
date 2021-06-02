@@ -1,0 +1,156 @@
+{% extends 'authentication/base.html'%}
+{% load static %}
+
+
+<!doctype html>
+<html lang="en">
+  {% load pwa %}
+  {% progressive_web_app_meta %}
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+         
+    
+        <title>Polls App</title>
+        
+      </head>
+  
+  <body>
+       
+{% block nav %}
+
+<header class="nav-stick">
+    
+
+  <nav class="navbar navbar-expand-lg navbar-light ">
+    <h2 class="text-info display-7" style="margin-right: 1%; font-weight: 600;" >Parking app</h1>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto"style="font-size:120%">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'auth:home' %}">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" style="color: black;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Feature
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#feature">Feature1  </a>
+            <a class="dropdown-item" href="#feature">Feature2</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="feature">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color: black;" href="#footer">Contact</a>
+        </li>
+      </ul>
+        
+      
+    </div>
+  </nav>
+</header>
+
+
+{% endblock %}
+
+    {% block content %}
+<div>
+    <div class="container-fluid position-relative mb-sm-5 gmp-bg" data-aos="fade-up">
+    <video class="position-absolute" poster="#" id="gmp-video" autoplay="" loop="" muted="" playsinline="" webkit-playsinline="">
+      <source src="https://www.getmyparking.com/src/gmp-video-720.mp4" type="video/mp4">
+    </video>
+    <div class="row head_row  align-items-center">
+      <div class="col-md-5 mx-auto text-center">
+        <h1 class="h1 font-muli font-weight-bold px-sm-2 pb-2 mt-5"><span class="text-white">We
+            make it easy to</span><br><span style="color: rgb(88, 167, 88);">Park</span> <span class="text-white">and</span> <span style="color:rgb(85, 179, 85);">Go </span></h1>
+           <span> <a href="{% url 'auth:signup' %}"><button class="get-start"  >Signup</button></a></span> <span><a href="{% url 'auth:login' %}"><button class="get-start">Login</button></a></span>
+          
+            
+          </div>
+    </div>
+  </div>
+</div>
+
+  {% endblock %}
+
+
+{% block feature %}
+
+
+       <div class="feature" id="feature" style="margin-bottom: 3%;">
+           <div class="container" >
+            <div class="col-lg-12 mb-4"><h2 class="text-center common-title-lable">WHY US?</h2></div>
+               <div class="row home_card_rown "  >
+                   <div class="col-md-4">
+                       <div class="f1 ">
+                        <div class="card home_card " >
+                            <i>
+                                <img class="card-img-top" src="{% static '/images/f1.svg' %}"alt="Card image cap">
+                            </i>
+                            <div class="card-body text-center">
+                              <h5 class="card-title">Superior Service</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <a href="#" class="btn btn-primary">Read More</a>
+                            </div>
+                          </div>
+                       </div>
+                   </div>
+                   <div class="col-md-4">
+                       <div class="f2">
+                        <div class="card home_card" >
+                            <i>
+                                <img class="card-img-top" src="{% static '/images/f2.svg' %}"alt="Card image cap">
+                            </i>
+                            <div class="card-body text-center">
+                              <h5 class="card-title">Innovative Technology</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <a href="#" class="btn btn-primary">Read More</a>
+                            </div>
+                          </div>
+                       </div>
+                   </div>
+                   <div class="col-md-4">
+                       <div class="f3" > 
+                        <div class="card home_card " >
+                            <i>
+                            <img class="card-img-top" src="{% static '/images/f3.svg' %}"alt="Card image cap">
+                        </i>
+                            <div class="card-body text-center">
+                              <h5 class="card-title">End-to-End Solution</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <a href="#" class="btn btn-primary">Read More</a>
+                            </div>
+                          </div>
+                       </div>
+                   </div>
+
+               </div>
+
+           </div>
+
+            
+       </div>
+       
+{% endblock %}
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
+  

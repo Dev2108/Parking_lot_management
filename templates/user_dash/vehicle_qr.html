@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+
+{% extends 'authentication/base.html' %}
+{% load static %}
+
+{% block css_content %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/user_dash/vehicle_qr.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="text-center qr_code">
+    <img src= {{image}} alt="">
+  </div>
+
+{% endblock %}

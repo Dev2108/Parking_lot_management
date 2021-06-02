@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF data</title>
+
+    <style>
+        @page{
+            size: 'A4';
+            margin: 2.5cm,1.5cm,3.5cm,1.5cm;
+  
+        @top-center{
+            content: 'Your Vehicle Parking History';
+        }
+      }
+      .history{
+          font-size: 20px;
+      }
+    </style>
+</head>
+
+        
+
+
+<body>
+   
+ {% if history %}
+    <table class="table table-hover" style="border: 1px solid rgb(105, 165, 214); "  >
+    
+            
+                
+        <tr class="history">
+
+          <th  style="background: rgb(50, 122, 182); color: white;">Number</th>
+          <th  style="background: rgb(50, 122, 182); color: white;">In_Datetime</th>
+          <th  style="background: rgb(50, 122, 182); color: white;">Out_Datetime</th>
+          <th  style="background: rgb(50, 122, 182); color: white;">Charges(Rs.)</th>
+               
+        </tr>
+    
+    
+        {% for entry in history %}
+        <tbody>
+            <tr class="history">
+            <td>{{vehicle.number}}</td>
+            <td>{{entry.in_datetime}}</td>
+            <td>{{entry.out_datetime}}</td>
+                <td>{{entry.charges}}</td>
+                
+            </tr>
+            {% endfor %}
+            <tr class="history">
+                    <td colspan="3"  style="background: rgb(50, 122, 182); color: white;"> Total(Rs.)</th>
+                    <td  style="background: rgb(50, 122, 182); color: white;">{{total}}</td>
+                    
+            </tr>
+        </tbody>
+        
+       
+
+        
+    </table>
+ {% endif %}
+
+</body>
+</html>

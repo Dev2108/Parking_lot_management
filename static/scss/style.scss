@@ -1,0 +1,207 @@
+$logbtn-color:#05588f;
+$signbtn-color:rgb(212, 84, 34);
+
+@import "signup";
+@import "login";
+@import "userdash";
+@import "opdash";
+
+
+/* navbar ----------------------------------------------------*/
+ 
+.nav-stick{
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+}
+.navbar{
+       
+        background-color: #fff;
+        position: relative;
+        -webkit-box-shadow: 0 2px 8px 0 ;
+        box-shadow: 0 2px 8px 0 ;
+        height: 72px;
+               flex: 0 0 72px;
+        z-index: 2000;
+        
+       
+}
+@media screen and (max-width: 768px) {
+.navbar-collapse{
+    margin-top: 2.5%;
+    padding-left: 3%;
+    background: white;
+}
+}
+
+.pe-site-header__right{
+     
+    font-size: 150%;
+    margin-right: -1.0%;
+    padding-left: 4rem;
+    padding-right: 1rem;
+    padding-top: 0.9rem;
+    padding-bottom: 0.6rem;
+    background-image: linear-gradient(
+    115deg
+    , #fff 0%, #fff 2.5rem, #007acc 2.9em, #00497a );
+}
+
+.pe-site-header__right>.pe-site-header__action {
+    
+    text-decoration: white;
+    line-height: 1.5;
+     font-weight: 600;
+   
+    color: #e3ecf5;
+    box-shadow: inset 0 0 0 1px #007acc;
+    background-color: #f8fafc;
+    color: #0e80cc;
+    font-size: 0.9em;
+    padding: .3rem .4rem;
+    margin: 0 1.0rem;
+    
+    align-self: center;
+}
+.head-login {
+      color: white;
+      
+}
+.pe-site-header__right>.head-login:hover{
+  color: white;
+}
+
+
+ /* footer------------------------------------------ */
+
+
+ .footer{
+    background: #455e83;
+
+}
+
+/* feature-------------------------- */
+.common-title-lable {
+    font-family: 'TradeGothic LT CondEighteen';
+    width: 100%;
+    font-size: 30px; font-weight: bold;
+    color: #2980b9 !important;
+    text-transform: uppercase !important;
+}
+
+.home_card i {
+    width: 80px;
+    height: 80px;
+    border: solid 3px #fcb034;
+    margin: auto;
+    border-radius: 50%;
+    line-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3%;
+}
+.card-img-top{
+    width: 50px;
+}
+.home_card{
+    background-color: #e8f5fb;
+    height: 150%;
+    width: 2 2 30%;
+    
+    
+}
+.home_card {
+    box-shadow: 3px 3px 10px 0 ;
+    border: solid 0.2px rgba(112, 112, 112, 0.2);
+    background-color: #e8f5fb;
+    padding: 20px;
+    min-height: 350px;
+    max-height: 350px;
+}
+/* homehead----------------------------------------------------- */
+.gmp-bg {
+    background-color: rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+}
+#gmp-video {
+    width: 100%;
+    z-index: -1;
+    margin: 0 -15px;
+    height:auto;
+}
+
+.get-start{
+    background-color: rgb(69, 150, 69);
+    color: white;
+    margin-top: 5%;
+  font-size: 25px;
+  padding: 6px 10px;
+  margin-right: 3%;
+  border-radius: 5px;
+}
+
+.head_row{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    
+}
+@media screen and (max-width: 425px ){
+
+    .head_row{
+        margin-top: 1%;
+        margin-bottom: 10%;
+        
+    }
+    
+}
+
+
+  /* historypage------------------------------------------------------ */
+
+
+  .result_head{
+    color:rgb(10, 121, 74);
+     font-family: 'Lobster Two', cursive;
+      font-size: 80px;
+  }
+  @media screen and (max-width: 320px ){
+  .history{
+
+    font-size: 13px;
+
+  }
+}
+@media screen and (max-width: 768px)and (min-width:768px){
+
+    .result_head{
+       
+        font-size: 60px;
+    }
+}
+@media screen and (max-width: 540px ){
+
+    .result_head{
+       
+        font-size: 55px;
+    }
+}
+@media screen and (max-width: 425px ){
+
+    .result_head{
+       
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 1024px ){
+
+    .op_left{
+        margin-top: 6%;
+    }
+    .op_right{
+        margin-top: 0px;
+    }
+    
+
+}

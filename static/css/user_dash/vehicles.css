@@ -1,0 +1,142 @@
+.brand{
+  font-size: 30px;
+  font-weight: bolder;
+  color: #f3f4ed;
+}
+.main-container{
+  padding: 0 50px 0 50px;
+  display: inline-grid;
+  grid-template-columns: 1fr 2fr;
+}
+.left-container{
+  padding-top: 100px;
+  padding-left: 100px;
+}
+.right-container{
+    padding-right: 10px;
+}
+img{
+  width: 100%;
+  height:auto;
+}
+a{
+  text-align: right;
+}
+a:hover{
+  text-decoration: none;
+}
+.question-list{
+  color: #7868e6;
+  font-size: 20px;
+  padding-top: 5px;
+}
+.active-polls{
+  font-size: 40px;
+  color: #5f939a;
+}
+.footer{
+  position: fixed;
+}
+@media screen and (max-width: 1400px) {
+  .main-container{
+    padding: 0 50px 0 50px;
+    display: inline-grid;
+    grid-template-columns: 1fr 2fr;
+  }
+  .left-container{
+    padding-top: 100px;
+    padding-left: 100px;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .main-container{
+    padding: 0 50px 0 50px;
+    display: inline-grid;
+    grid-template-columns: 1fr 2fr;
+}
+  .left-container{
+    padding-top: 60px;
+    padding-left: 60px;
+  }
+  .footer{
+    position:absolute;
+    left: 0;
+    bottom: 0;
+  }
+}
+@media screen and (max-width: 900px) {
+  .main-container{
+    padding: 0 50px 0 50px;
+    display: inline-grid;
+    grid-template-columns: 1fr 2fr;
+    /* grid-column-gap: -10px; */
+
+  }
+  .left-container{
+    padding-top: 30px;
+    padding-left: 30px;
+  }
+  .footer{
+    position:absolute;
+    left: 0;
+    bottom: 0;
+  }
+}
+@media screen and (max-width: 770px) {
+  .main-container{
+    padding: 0 50px 0 50px;
+    display: inline-grid;
+    grid-template-columns: 1fr 2fr;
+  }
+  .left-container{
+    padding-top: 20px;
+    padding-left: 0;
+  }
+  .footer{
+    grid-template-columns: 1fr auto;
+  }
+}
+@media screen and (max-width: 500px) {
+  body {
+    background-color: #e4fbff;
+  }
+  .main-container{
+    padding: 0 50px 0 50px;
+    display: inline-grid;
+    grid-template-columns: 1fr;
+    /* grid-column-gap: -10px; */
+
+  }
+  .left-container{
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 100px;
+  }
+  img{
+    width: 100%;
+    height:auto;
+    display: none;
+  }
+  .footer{
+    position:static;
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-height: 2000px) and (max-width: 700) {
+  .footer{
+    position:fixed;
+    left: 0;
+    bottom: 0;
+  }
+}
+@media screen and (max-height:810px) {
+  .footer{
+    position:static;
+  }
+}
+@media screen and (max-height:650px) {
+  .footer{
+    position:static;
+    grid-template-columns: 1fr auto;
+  }
+}

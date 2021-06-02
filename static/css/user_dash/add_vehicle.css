@@ -1,0 +1,28 @@
+.main-container{
+  margin: 50px 0px 0 0;
+  padding-bottom: 3%;
+}
+
+a:hover{
+  text-decoration: none;
+}
+.add_vehicle{
+  font-size:25px; 
+  text-align: center; 
+   background: linear-gradient(
+    300.67deg
+    ,#a3c3e0,#517eb9 60.92%); 
+    margin-top: 3%;
+     margin-bottom: 5%;
+      border: 2px solid rgb(119, 152, 189);
+       padding-top: 2%;
+        padding-bottom: 2%;
+}
+@media screen and (max-width: 425px ){
+  .add_vehicle{
+    font-size:20px; 
+  }
+  #id_number{
+    
+  }
+}

@@ -1,0 +1,99 @@
+.op_right{
+    margin-top: 5%;
+}
+.op_btn{
+    background-color: #295ca0 ;
+    color: white;
+    margin-top: 5%;
+  font-size: 25px;
+  padding: 6px 40px;
+  margin-right: 3%;
+  border-radius: 5px;
+  width: 120%;
+}
+
+.camera{
+    margin-left: 24%;
+    padding-top: 10%;
+    height: auto ;
+    width: 50%;
+    
+}
+
+.qr_btn{
+    font-size: 25px;
+    width: auto;
+    margin-bottom: 5%;
+    
+}
+.qr_result{
+    padding-bottom: 5%;
+}
+.qr_data{
+    width: 30%;
+    height:40px;
+}
+.qr_result input[type="text"] {
+    padding-left: 2%;  
+  }
+  .qr_result input[type="number"] {
+    padding-left: 2%;  
+  }
+  @media screen and (max-width: 1024px ){
+
+    .op_left{
+        margin-top: 6%;
+    }
+    .op_right{
+        margin-top: 0px;
+    }
+    
+
+}
+  @media screen and (max-width: 768px ){
+
+    /* ----------------op-dash----------------------- */
+  .op_left_head{
+      font-size: 1.8rem;
+  }
+  
+.op_btn{
+   
+  font-size: 17px;
+  padding: 6px 40px;
+ 
+ 
+  width: 100%;
+}
+  }
+
+  @media screen and (max-width: 425px ){
+    /* ------------op-dash---------------------- */
+    .op_left{
+        margin-top: 10%;
+    }
+
+.op_btn{
+   
+    font-size: 17px;
+    padding: 4px 30px;
+   
+   
+    width: 100%;
+  }
+  .camera {
+     padding-top: 20%;
+    margin-left: 0%;
+    height: auto;
+    width: auto;
+}
+.qr_data {
+    width: 70%;
+    height: 40px;
+}
+.qr_btn {
+    font-size: 18px;
+    width: auto;
+    margin-bottom: 5%;
+}
+  }

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% extends 'authentication/base.html' %}
+{% load static %}
+
+{% block css_content %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/user_dash/vehicles.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="main-container">
+  <!-- <h1>{{user.username}}</h1> -->
+  <div class="left-container">
+    <h1 class=" active-polls" >User's Vehicles</h1>
+    <br>
+    {% if list %}
+        <ol>
+        {% for vehicle in list %}
+
+        <div class="">
+          <li ><a class="question-list" href="{% url 'user:return_qr' vehicle.id %}">{{vehicle.number}}</a></li>
+        </div>
+
+        {% endfor %}
+        </ol>
+    {% else %}
+        <h1>No Vehicles</h1>
+
+    {% endif %}
+    <br>
+    <br>
+    <a href="{% url 'user:index' %}" class="btn btn-outline-dark" style = "margin-left: 5%">Back</a>
+    </div>
+  <div class="right-container">
+    <img src="{% static 'images/questions.png' %}" alt="illustration">
+  </div>
+
+</div>
+
+  {% endblock %}

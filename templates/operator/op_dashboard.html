@@ -1,0 +1,30 @@
+{% extends 'authentication/base.html' %}
+{% load static %}
+
+{% block op_Dashboard %}
+
+<body style="background-color: #f6f9fc;">
+<div class="container-fluid " style=" margin-bottom: 5%;">
+    <div class="row align-items-center">
+      
+      <div class="col-md-6 px-5 text-center op_left" data-aos="fade-right">
+
+        <h1 class="h1 color-blue-2 font-muli mb-3 op_left_head">Welcome to operator dashboard.</h1>
+        <p class="color-blue-1 mb-4"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+            molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
+            voluptatem veniam, est atque cumque eum delectus sint!</p>
+          <a class="btn " href="{% url 'operators:entry_scanner' %}" style="font-size: 30px;"><button class="op_btn"  >Entry Scanner</button></a> <br />
+          <a class="btn " href="{% url 'operators:exit_scanner' %}" style="font-size: 30px;"><button class="op_btn"  >Exit Scanner </button></a> <br>
+          <br>
+            </div>
+            <div class="col-md-6 text-center order-sm-2 op_right" data-aos="fade-left" >
+              <div class="position-relative overflow-hidden">
+                <video class="position-relative w-100" autoplay="" loop="" muted="" playsinline="" webkit-playsinline="" style="transform: scale(1.01, 1.04);">
+                  <source src="https://www.getmyparking.com/src/interoperable.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+    </div>
+  </div>
+</body>
+{% endblock %}

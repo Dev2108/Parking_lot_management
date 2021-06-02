@@ -1,0 +1,88 @@
+{% extends 'authentication/base.html' %}
+{% load static %}
+
+{% block User_Dashboard %}
+ <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/user_dash/index.css' %}">
+    <title>User_Dashboard</title>
+  </head>
+  <body >
+
+    <div class="ques_head text-center" >
+      <h1 class="user_head">Welcome to User Dashboard</h1> 
+      <p style="color: black;">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+  </div>
+    <div class="container  ques_btn"  >
+      <p id = "error_message" style="color: rgb(212, 16, 16); font-size: 20px;"><strong>{{error_message}}</strong></p>
+
+          <a class="btn " href="{% url 'user:add_vehicle' %}" ><button class="usr_btn"  >Add Vehicle</button></a> <br />
+          <a class="btn " href="{% url 'user:view_vehicles' %}" ><button class="usr1_btn"  >Registered Vehicles</button></a> <br>
+          <a class="btn " href="{% url 'user:history' %}" ><button class="usr2_btn"  >Parking History</button></a> <br>
+          
+    </div>
+    <br>
+
+    </body>
+</html>
+ 
+
+ 
+<!-- 
+<body  >
+    
+ 
+   
+  
+  <div class="container-fluid">
+  <div class="ques"  >
+     <div class="ques_head text-center" >
+          <h1 style="  display: block; font-weight: 600; font-size: 2.95em; font-family: 'PT Sans', sans-serif; color: black;">Welcome to User Dashboard</h1> <br>
+          <p style="color: white;">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+      </div>
+      <div class=" container ques_option_box text-center">
+          
+          <div class="ques_card_option text-center  d-flex justify-content-center"  >
+
+             <div class="row " style="margin-bottom: 4%; justify-content: center; ">
+
+              <div class="col-md-6 "style="margin-top:2%;" >
+
+                    <img class="card-img-top ques_img" src="{% static '/images/add.jpeg'  %}" alt="Card image cap" >
+                       <a href="#" class="btn btn-primary">Vote</a> 
+                      
+              </div>
+             
+
+                <div class="col-md-6 "style="margin-top:2%; " >
+  
+                      <img  class="card-img-top ques_img" style="padding-right:7%; " src="{% static '/images/register.jpeg'  %}" alt="Card image cap" >
+                         <a href="#" class="btn btn-primary">Vote</a> 
+                        
+                </div>
+
+                <div class="col-md-12 " >
+  
+                  <img class="card-img-top ques_img" style="width: 1115px; padding-right: 1%;" src="{% static '/images/parked.jpeg'  %}" alt="Card image cap" >
+                    <a href="#" class="btn btn-primary">Vote</a> 
+                    
+            </div>
+          </div>
+       </div>
+               
+             
+           
+      </div>
+
+  </div>
+  
+</div>
+
+
+   
+</body> -->
+{% endblock %}
+
+

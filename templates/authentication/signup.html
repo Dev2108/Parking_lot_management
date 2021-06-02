@@ -1,0 +1,85 @@
+
+{% extends 'authentication/base.html' %}
+{% load static %}
+
+
+
+
+
+{% block signup %}
+<body style="background: linear-gradient(
+  300.67deg
+  ,#7fa9d1,#2960a8 60.92%);">
+      
+
+      
+
+
+
+    <div class="">
+      <div class="container " >
+        <div class="signup">
+            <div class="row">
+           
+              <div class="col-md-6">
+                  <div class="split-signup-img">
+                 
+                    <img class="split-head-sign__image"  src="{% static '/images/sign1.png' %}">
+                  </div>
+              </div>
+              <div class="col-md-6 ">
+                <div class="split-signup-head ">
+
+                   <h1 class="text-center display-5" style="color: #067fcf; font-weight:bold; ">Sign Up</h1>
+                  <p class="text-center" style="color: #05588f;">Welcome!
+                  Quickly signup for an account now.</p>
+                 
+                  <div class="d-flex justify-content-center">
+            
+                    <a href="#" class="btn btn-primary ">Signup with Facebook</a>  
+                  </div> <br>
+                  <div class="d-flex justify-content-center">
+                    <a href="#" class="btn btn-danger " style="background-color: red;">Signup with Google</a>
+                  </div>
+                  
+                  <br>
+                  
+                <form method="post">
+                  {% csrf_token %}
+                  {% for field in form %}
+                    <p>
+                      <div class="input ">
+                      {{ field.label_tag }}
+                      <br>
+                      {{ field }}
+                     </div>
+                      
+                
+                      {% if field.help_text %}
+                     <!--   <small style="color: grey">{{ field.help_text }}</small>  -->
+                      {% endif %}
+                      {% for error in field.errors %}
+                        <p  style="color: red; margin-left: 50px; ">{{ error }}</p>
+                      {% endfor %}
+                    </p>
+                  {% endfor %}
+                  
+                  <button  class="signbtn pb-1  pt-1" type="submit">Create Account</button>
+                  <p class="text-center" >Already have an account? <a href="{% url 'auth:login' %}"class="text-center" style="color: #05588f;"  >Login</a></p>
+             
+                </form>
+                   </div>
+                </div>
+             
+          </div>
+        </div>
+
+      </div>
+    
+    </div>
+  </body>
+{% endblock %}
+
+  
+{% block footer %}
+{% endblock %}

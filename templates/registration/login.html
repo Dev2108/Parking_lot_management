@@ -1,0 +1,77 @@
+{% extends 'authentication/base.html' %}
+{% load static %}
+
+{% block login %}
+<body style="background: linear-gradient(
+  300.67deg
+  ,#7fa9d1,#2960a8 60.92%);">
+
+<div class="log-in"  >
+   <div class="container"  >
+     <div class="login">
+     <div class="row"   >
+        <div class="col-md-6" style="background: rgb(95 192 249); ">
+          <div class="log-left" style="margin-left: 8%;" >
+            <h1 class="login__title "><p>Set foot inside the
+
+                Parking application.</p>
+
+           </h1>
+           <p class="login__subtitle">Login
+             and  go into the  world of parking app.</p>
+            </div>
+         </div>
+         <div class="col-md-6" style="background:#d3dce9;">
+          <div class="split-login " >
+
+             <h1 class="text-center display-5" style="color: #067fcf;  ">Welcome!</h1>
+            <p class="text-center" style="color: #05588f; margin-bottom: 7%;">
+            Login to your account now.
+          </p>
+
+
+           <div class="d-flex justify-content-center">
+
+              <a href="#" class="btn btn-primary ">Login with Facebook</a>
+            </div> <br>
+            <div class="d-flex justify-content-center">
+              <a href="#" class="btn btn-danger " style="background-color: red;">Login with Google</a>
+            </div>
+
+            <br>
+            <form  method="post">
+              <div class="login_form ">
+              {% csrf_token %}
+              {{form.as_p}}
+
+            </div>
+
+              <button class="btn logbtn" type="submit">Login</button><br>
+              <p class="text-center" ><a href="#"class="text-center" style="color: #05588f;"  >Forgot Password?</a></p>
+              <p class="text-center" >Create an Account? <a href="{% url 'auth:signup' %}"class="text-center" style="color: #05588f;"  >Signup </a></p>
+           </form>
+             </div>
+          </div>
+        </div>
+        </div>
+     </div>
+
+
+
+   </div>
+</div>
+
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+ <!-- <ul class="errorlist nonfield"><li>Please enter a correct username and password. Note that both fields may be case-sensitive.</li></ul> -->
+              <!-- <div class="d-flex justify-content-center mb-2" >
+                  <input class=""  type="text" name="username" placeholder="Email" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username">
+                
+              </div>
+              
+            <div class="d-flex justify-content-center mb-4" >
+                <input  placeholder="Password" type="password" name="password" autocomplete="current-password" required="" id="id_password">
+            </div> -->

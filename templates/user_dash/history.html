@@ -1,0 +1,76 @@
+
+{% extends 'authentication/base.html' %}
+{% load static %}
+
+
+  
+
+{% block history %}
+<body style="background-color: #e2e8f0">
+ 
+  <div class="container">
+      <form method="post" action="/polls/login" ></form>
+          <div class="text-center " style="margin-top: 3%;" >
+                      <h1 class="result_head" >Your Vehicle's parking history</h1>
+          
+                  <p style="color: rgb(13, 95, 68);" >We really appreciate you for giving us a moment of your time today.Thanks for being you</p>
+              </div>
+      <div  style="margin-top: 3%;">
+              
+
+              
+       <DIV style="margin-bottom: 3%;">
+                      
+              
+               
+             {% if history %}
+                  <table class="table table-hover" style="border: 1px solid rgb(105, 165, 214);"  >
+                  
+                          
+                              
+                      <tr class="history">
+                        <th  style="background: rgb(50, 122, 182); color: white;">Number</th>
+                        <th  style="background: rgb(50, 122, 182); color: white;">In-Time</th>
+                        <th  style="background: rgb(50, 122, 182); color: white;">Out-Time</th>
+                        <th  style="background: rgb(50, 122, 182); color: white;">Charges</th>
+                          
+                      </tr>
+                  
+                  
+                      {% for entry in history %}
+                      <tbody>
+                      <tr class="history">
+                        <td>{{vehicle.number}}</th>
+                        <td>{{entry.in_datetime}}</td>
+                        <td>{{entry.out_datetime}}</td>
+                        <td>{{entry.charges}}</td>
+                          
+                          </tr>
+                         
+                      </tbody>
+                      
+                      {% endfor %}
+
+                      
+                  </table>
+           
+                                    
+                    {% else %}
+                    <p>No History.</p>
+
+                    {% endif %}
+                      <a href="#" class="btn btn-1">
+                                          
+                      <span class="round"><i class="fa fa-chevron-left"></i></span>
+                      <a href="{% url 'user:history' %}"><span class="txt btn btn-danger">Back</span></a>
+                    </a>
+          </DIV>
+                  
+
+      </div>
+
+    </div>
+      {% endblock %}
+    
+    </body>
+      

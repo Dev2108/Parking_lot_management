@@ -1,0 +1,98 @@
+{% extends 'authentication/base.html' %}
+{% load static %}
+
+
+<html>
+
+    <head>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/3.3.3/adapter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    </head>
+
+    {% block qr_scanner %}
+
+    <body style="background-color:rgb(26, 36, 44);">
+
+        <div class="container">
+           <div class="col-lg-12 col-md-12 text-center " style="text-align: center;">
+                <div class=" camera  pb-3" >
+                    <video id="preview" width="100%"></video>
+                </div><br>
+                <form method="post">
+                  {% csrf_token %}
+                  <p id ="error_message" style="color: rgb(212, 16, 16); font-size: 20px;"><strong></strong></p>
+                  <div class="qr_result  "> 
+                    <span id ="error_message" ></span>
+                    <br>
+                    <input id="id_qrdata" type="text" name="" value="" class = "qr_data" readonly placeholder = "Vehicle Number"> <br><br>
+                    <input id="id_user" type="number" name="" value="hidden" class = "qr_data" readonly placeholder = "User Id">
+                    <br> <br>
+                    <span> <button class="mx-2 qr_btn" ><a href="{% url 'operators:verify' %} " style="text-decoration:none; color: black">Back</a></button></span>
+                    <span> <button id ="exit" class="qr_btn" type="button" name="button">Submit</button></span>
+                  </div>
+                 </form>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+        <script>
+           let scanner = new Instascan.Scanner({ video: document.getElementById('preview')});
+           Instascan.Camera.getCameras().then(function(cameras){
+               if(cameras.length > 0 ){
+                   scanner.start(cameras[0]);
+               } else{
+                   alert('No cameras found');
+               }
+
+           }).catch(function(e) {
+               console.error(e);
+           });
+
+           scanner.addListener('scan',function(c){
+               var res = c.split(",");
+               console.log(res);
+               document.getElementById('id_qrdata').value=res[0];
+               document.getElementById('id_user').value = Number(res[1]);
+               console.log(res[1]);
+           });
+
+        </script>
+        <script type="text/javascript">
+          $('#exit').click(function() {
+            var veh_number = $('#id_qrdata').val();
+            var user = $('#id_user').val();
+            console.log(veh_number)
+            console.log(user)
+            const url = "{% url 'operators:exitupdate' %}";
+            var user_data = {
+                number: veh_number,
+                user_id : user,
+              };
+            if(veh_number){
+              $.ajax({
+              url: url,
+              type: 'PUT',
+              data: user_data,
+              success: function (data, status) {
+                  // Do something with the result
+                  $('#error_message').html("Exit Successful");
+                  console.log("Data: " + data + "\nStatus: " + status);
+              },
+              error: function(){
+                $('#error_message').html("The Entry for this vehicle is not present")
+              }
+            });
+          }
+          else{
+            $('#error_message').html("Please scan the qr-code");
+          }
+      })
+        </script>
+
+    </body>
+
+</html>
+{% endblock %}
